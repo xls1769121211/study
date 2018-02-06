@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlrewrite>
+     <rule>
+        <from>jsp/([0-9]+).html$</from>
+        <run class="com.xls.TestStaticPage" method="log2" />
+        <to>jsp/NewFile.jsp?id=$1</to>
+    </rule>
+    
+     <outbound-rule>
+        <from>jsp/NewFile.jsp\?id=([0-9]+)</from>
+        <to>jsp/$1.html</to>
+    </outbound-rule>
+</urlrewrite>
